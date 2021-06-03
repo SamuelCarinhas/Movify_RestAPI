@@ -4,16 +4,20 @@ import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.index.Indexed
 import org.springframework.data.mongodb.core.mapping.Document
 
-@Document(collection = "movies")
-data class Movie (
+@Document(collection = "users")
+data class User (
 
     @Id
-    val _id: String? = null,
+    val id: String? = null,
 
     @Indexed(unique = true)
-    val title: String,
+    val username: String,
 
-    val description: String,
+    val password: String,
 
-    val img: String
+    val fullName: String? = null,
+
+    val img: String? = null,
+
+    val role: Role? = null
 )
